@@ -7,8 +7,10 @@ public class Exercise8 {
         String matter = "";
         boolean formatBool = false;
         String input = in.nextLine();
+        input = input.trim();
         int length = input.length();
-        String temp = input.substring(0, length-2);
+        String temp = input.substring(0, length-1);
+        temp = temp.trim();
         String tempType = Character.toString(input.charAt(length-1)).toUpperCase();
         double tempNum = Double.valueOf(temp);
         double tempNumCels = 0;

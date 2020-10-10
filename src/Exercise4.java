@@ -9,7 +9,8 @@ public class Exercise4 {
         boolean signBool = false;
         String minus = "-";
         String plus = "+";
-        String grade = in.next();
+        String grade = in.nextLine();
+        grade = grade.trim();
         String letter = Character.toString(grade.charAt(0)).toUpperCase();
         String[] gpa = new String[]{
             "F", "D", "C", "B", "A"
@@ -23,7 +24,7 @@ public class Exercise4 {
             }
         }
         if(grade.length()>1) {
-            String sign = Character.toString(grade.charAt(1));
+            String sign = Character.toString(grade.charAt(grade.length()-1));
             if(sign.equals(minus) && GPA != 0){
                 change = -0.33;
                 signBool = true;
@@ -32,6 +33,8 @@ public class Exercise4 {
                 change = 0.33;
                 signBool = true;
             }
+        }else{
+            signBool = true;
         }
         GPA += change;
         if(gradeBool==false || signBool==false){
